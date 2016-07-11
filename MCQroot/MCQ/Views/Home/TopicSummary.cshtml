@@ -1,0 +1,173 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="main-content">
+    <div class="heading-section">
+        <h1><b>{{selectedTopic.name}}</b></h1>
+    </div>
+    <div class="dash-items-wrapper">
+        <div class="dash-items">
+            <div class="dash-item">
+                <div class="widget bg-yellow p-lg text-center orange">
+                    <div class="m-b-md">
+                        <h1 class="m-xs">{{selectedTopic.questionCount}}</h1>
+                        <h3 class="font-bold no-margins">
+                            Questions
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="dash-item">
+                <div class="widget bg-navy p-lg text-center orange">
+                    <div class="m-b-md">
+                        <div class="chart-holder">
+                            <canvas id="dunut-chart" tc-chartjs chart-type="doughnut" chart-data="topicSummaryViewModel.pieData" chart-options="topicSummaryViewModel.myOptions" width="74" height="74"></canvas>
+                        </div>
+                        @*<pie-chart data="topicSummaryViewModel.pieData" options="{thickness: 200}" class="dash-pie"></pie-chart>*@
+                        <h3 class="font-bold no-margins">
+                            Progress
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="dash-item">
+                <div class="widget bg-red p-lg text-center orange">
+                    <div class="m-b-md">
+                        <h1 class="m-xs ng-binding">{{topicSummaryViewModel.successRate}} %</h1>
+                        <h3 class="font-bold no-margins">
+                            Success Rate
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bottom-lnks ng-scope">
+        <div class="file-box-wrapper">
+            <div class="file-box">
+                <div class="file">
+                    <a href="javascript:void(0)" ng-click="explore()">
+                        <div class="icon">
+                            <img src="~/Scripts/lib/template-files/img/ico-1.png" alt="book">
+                        </div>
+                        <div class="file-name orange">
+                            Explore
+                        </div>
+                    </a>
+                </div>
+            </div>
+            @*<div class="file-box">
+                    <div class="file">
+                        <a href="javascript:void(0)" ng-click="explore()">
+                            <div class="icon">
+                                <img src="~/Scripts/lib/template-files/img/ico-2.png" alt="test">
+                            </div>
+                            <div class="file-name">
+                                Mock Test
+                            </div>
+                        </a>
+                    </div>
+                </div>*@
+            <div class="file-box">
+                <div class="file">
+                    <a href="javascript:void(0)" ng-click="clean()">
+                        <div class="icon">
+                            <img src="~/Scripts/lib/template-files/img/ico-3.png" alt="settings">
+                        </div>
+                        <div class="file-name orange">Clear</div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+@*<div class="dash-items">
+
+    <div class="dash-item">
+        <div class="widget bg-yellow p-lg text-center">
+            <div class="m-b-md">
+                <i class="fa fa-question-circle fa-4x"></i>
+                <h1 class="m-xs">{{topicSummaryViewModel.questionsNumber}}</h1>
+                <h3 class="font-bold no-margins">
+                    Questions
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="dash-item">
+        <div class="widget bg-navy p-lg text-center">
+            <div class="m-b-md">
+                <pie-chart data="topicSummaryViewModel.pieData" options="{thickness: 200}" class="dash-pie"></pie-chart>
+                <h3 class="font-bold no-margins">
+                    Progress {{topicSummaryViewModel.answerdQuestionsNumber}} %
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="dash-item">
+        <div class="widget bg-red p-lg text-center">
+            <div class="m-b-md">
+                <i class="fa fa-star fa-4x"></i>
+                <h1 class="m-xs">{{topicSummaryViewModel.successRate}}%</h1>
+                <h3 class="font-bold no-margins">
+                    Success rate
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottom-lnks row">
+    <div class="file-box">
+        <div class="file">
+            <a href="javascript:void(0)" ng-click="explore()">
+                <div class="icon">
+                    <i class="fa fa-book"></i>
+                </div>
+                <div class="file-name">
+                    Explore
+                </div>
+            </a>
+        </div>
+
+    </div>
+ 
+    <div class="file-box" ng-if="loggedUser">
+        <div class="file">
+            <a href="javascript:void(0)" ng-click="clean()">
+                <div class="icon">
+                    <i class="fa fa-eraser"></i>
+                </div>
+                <div class="file-name">
+                    Clear
+                </div>
+            </a>
+        </div>
+    </div>
+</div>*@
+
+<script type="text/ng-template" id="Template">
+    <div class="modal-header" ng-show="modalOptions.headerText">
+        <h3>{{modalOptions.headerText}}</h3>
+    </div>
+    <div class="modal-body">
+        {{modalOptions.bodyText}}
+    </div>
+    <div class="modal-footer" ng-show="modalOptions.closeButtonText">
+        <button type="button" class="btn"
+                data-ng-click="modalOptions.close(0)">
+            {{modalOptions.closeButtonText}}
+        </button>
+        <button class="btn btn-primary"
+                data-ng-click="modalOptions.ok(1);">
+            {{modalOptions.actionButtonText}}
+        </button>
+    </div>
+</script>

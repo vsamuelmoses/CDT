@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+<script type="text/javascript">
+    var urls = @Html.Raw(Json.Encode(new
+               {
+                   templates = new
+                   {
+                       home = Url.Action(MVC.Home.Main()),
+                       topicSummary = Url.Action(MVC.Home.TopicSummary()),
+                       dashboard = Url.Action(MVC.Home.Dashboard()),
+                       quiz = Url.Action(MVC.Quiz.Quiz()),
+                       question = Url.Action(MVC.Quiz.Question()),
+                       payment = Url.Action(MVC.Home.Payment()),
+                       accountSettings = Url.Action(MVC.Home.AccountSettings()),
+                       resetPassword = Url.Action(MVC.Home.ResetPassword())
+                   },
+                   services = new
+                   {
+                       accountService = Url.Content("~/api/Account"),
+                       topictService = Url.Content("~/api/Topic"),
+                       quizService = Url.Content("~/api/Quiz"),
+                       paymentService = Url.Content("~/api/Payment"),
+                   }
+               }));
+</script>

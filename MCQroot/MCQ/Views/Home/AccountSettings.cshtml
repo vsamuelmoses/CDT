@@ -1,0 +1,98 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="main-content orange">
+    <div class="heading-section">
+        <h1>Welcome, {{loggedUser.firstName}} !</h1>
+    </div>
+    <div class="dash-items-wrapper  main-content-wrapper">
+        <div ng-show="!lastPaymentDate && doesHaveAccessNow">
+            <p>You are currently using a trial account, which gives complete accesss without any restrictions</p>
+            <p>Your trial period will end by {{expireDate}}</p>
+            <br />
+            <p>
+                @*<a href="" ui-sref="payment">Pay Here</a> to extend you access period*@
+            </p>
+            <br />
+            <br />
+            <p>For enquireis, please email support@cardrivingtheory.co.uk</p>
+        </div>
+        <div ng-show="!doesHaveAccessNow">
+            <p>Your membership expired on the {{expireDate}}</p>
+            <br />
+            <p>
+                @*<a href="" ui-sref="payment">Pay Here</a> to extend you access period*@
+            </p>
+            <br />
+            <br />
+            <p>For enquireis, please email support@cardrivingtheory.co.uk</p>
+        </div>
+        <div ng-show="lastPaymentDate && doesHaveAccessNow">
+            <p>You are a paid member. Your membership will end by {{expireDate}}</p>
+            <br />
+            <br />
+            <p>For enquireis, please email support@cardrivingtheory.co.uk</p>
+        </div>
+        <div ng-show="loggedUser.shouldSetPassword">
+            <p>Recently you have reseted password with temporary. Please set your new password. </p>
+            <br />
+            <div class="row form-group">
+                <div class="col-sm-2">
+                    <input type="password" ng-model="newPassword" class="form-control" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-1">
+                    <input type="button" class="form-control" value="Save" ng-click="updatePassword()" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+@*<div class="row">
+        <div class="col-xs-4">
+            <form ng-controller="registerController" class="form-horizontal">
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label text-left">
+                        First Name
+                    </label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" ng-model="firstName" value="{{firstName}}" readonly="" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label text-left">
+                        Last Name
+                    </label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" value="{{lastName}}" readonly="" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label text-left">
+                        Email Address
+                    </label>
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" value="{{email}}" readonly="" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label text-left">
+                        User Name
+                    </label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" value="{{userName}}" readonly="" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>*@
+

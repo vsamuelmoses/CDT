@@ -1,0 +1,1056 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3927717E-A50E-4F6B-9194-E706D5C55B19}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MCQ</RootNamespace>
+    <AssemblyName>MCQ</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>1.4</TypeScriptToolsVersion>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="T4MVCExtensions">
+      <HintPath>..\packages\T4MVCExtensions.3.16.5\lib\net40\T4MVCExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\EmailHelper.cs" />
+    <Compile Include="Code\PaymentCheckAttribute.cs" />
+    <Compile Include="Code\StringCipher.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\QuizApiController.cs" />
+    <Compile Include="Controllers\QuizController.cs" />
+    <Compile Include="Controllers\TopicApiController.cs" />
+    <Compile Include="Models\DashboardViewModel.cs" />
+    <Compile Include="Models\ExternalAccountViewModel.cs" />
+    <Compile Include="Models\LeftMenuTopicViewModel.cs" />
+    <Compile Include="Models\LoggedUserViewModel.cs" />
+    <Compile Include="Models\PaymentInfo.cs" />
+    <Compile Include="Models\PaymentViewModel.cs" />
+    <Compile Include="Models\QuestionViewModel.cs" />
+    <Compile Include="Models\ReponseResult.cs" />
+    <Compile Include="Models\RevealAnswerViewModel.cs" />
+    <Compile Include="Models\TopicSummaryViewModel.cs" />
+    <Compile Include="Models\TopicViewModel.cs" />
+    <Compile Include="T4MVC\AccountController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountApiController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="T4MVC\HomeController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4MVC\QuizController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4MVC\SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="T4MVC\T4MVC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\lib\angularjs\angular-facebook.js" />
+    <Content Include="Scripts\lib\angularjs\angular-ui-router.min.js" />
+    <Content Include="Scripts\lib\angularjs\angular.min.js" />
+    <Content Include="Scripts\lib\angularjs\angularlike.js" />
+    <Content Include="Scripts\lib\angularjs\slider.js" />
+    <Content Include="Scripts\lib\angularjs\tc-angular-chart.js" />
+    <Content Include="Scripts\lib\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Scripts\lib\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="Scripts\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Scripts\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\lib\bootstrap\js\bootstrap.js" />
+    <Content Include="Scripts\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Scripts\lib\bootstrap\js\respond.js" />
+    <Content Include="Scripts\lib\bootstrap\js\respond.min.js" />
+    <Content Include="Scripts\lib\bootstrap\js\ui-bootstrap.min.js" />
+    <Content Include="Scripts\lib\font-awesome\css\font-awesome.css" />
+    <Content Include="Scripts\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Scripts\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Scripts\lib\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Scripts\lib\jquery\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\lib\jquery\jquery-ui.css" />
+    <Content Include="Scripts\lib\jquery\jquery.metisMenu.js" />
+    <Content Include="Scripts\lib\kendo\css\Default\loading.gif" />
+    <Content Include="Scripts\lib\kendo\css\Default\sprite.png" />
+    <Content Include="Scripts\lib\kendo\css\kendo.default.min.css" />
+    <Content Include="Scripts\lib\kendo\js\kendo.all.min.js" />
+    <Content Include="Scripts\lib\linq\linq.min.js" />
+    <Content Include="Scripts\lib\modernizr\modernizr.js" />
+    <Content Include="Scripts\lib\notifications\css\angular-growl.css" />
+    <Content Include="Scripts\lib\notifications\css\angular-growl.min.css" />
+    <Content Include="Scripts\lib\notifications\img\error-red.png" />
+    <Content Include="Scripts\lib\notifications\img\error-white.png" />
+    <Content Include="Scripts\lib\notifications\img\info-blue.png" />
+    <Content Include="Scripts\lib\notifications\img\info-white.png" />
+    <Content Include="Scripts\lib\notifications\img\success-green.png" />
+    <Content Include="Scripts\lib\notifications\img\success-white.png" />
+    <Content Include="Scripts\lib\notifications\img\warning-white.png" />
+    <Content Include="Scripts\lib\notifications\img\warning-yellow.png" />
+    <Content Include="Scripts\lib\notifications\scripts\angular-growl.js" />
+    <Content Include="Scripts\lib\notifications\scripts\angular-growl.min.js" />
+    <Content Include="Scripts\lib\pie-chart-master\css\kube.min.css" />
+    <Content Include="Scripts\lib\pie-chart-master\css\pie-chart.css" />
+    <Content Include="Scripts\lib\pie-chart-master\dist\pie-chart.js" />
+    <Content Include="Scripts\lib\pie-chart-master\dist\pie-chart.min.js" />
+    <Content Include="Scripts\lib\pie-chart-master\dist\pie-chart.spec.js" />
+    <Content Include="Scripts\lib\pie-chart-master\Gruntfile.js" />
+    <Content Include="Scripts\lib\pie-chart-master\karma.conf.js" />
+    <Content Include="Scripts\lib\pie-chart-master\lib\pie-chart.js" />
+    <Content Include="Scripts\lib\pie-chart-master\lib\utils\draw.js" />
+    <Content Include="Scripts\lib\pie-chart-master\lib\utils\legend.js" />
+    <Content Include="Scripts\lib\pie-chart-master\lib\utils\misc.js" />
+    <Content Include="Scripts\lib\pie-chart-master\lib\utils\options.js" />
+    <Content Include="Scripts\lib\pie-chart-master\test\gauge_mode.spec.js" />
+    <Content Include="Scripts\lib\pie-chart-master\test\legend.spec.js" />
+    <Content Include="Scripts\lib\pie-chart-master\test\misc.spec.js" />
+    <Content Include="Scripts\lib\pie-chart-master\test\options.spec.js" />
+    <Content Include="Scripts\lib\pie-chart-master\test\size.spec.js" />
+    <Content Include="Scripts\lib\pie-chart-master\test\standard_mode.spec.js" />
+    <Content Include="Scripts\lib\signalR\jquery.signalR-2.2.0.js" />
+    <Content Include="Scripts\lib\signalR\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Scripts\lib\angularjs\angular.min.js.map" />
+    <Content Include="Scripts\lib\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Scripts\lib\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Scripts\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\lib\jquery\jquery-2.1.3.min.map" />
+    <Content Include="Scripts\lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Scripts\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Scripts\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Scripts\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Scripts\lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Scripts\lib\font-awesome\less\animated.less" />
+    <Content Include="Scripts\lib\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Scripts\lib\font-awesome\less\core.less" />
+    <Content Include="Scripts\lib\font-awesome\less\fixed-width.less" />
+    <Content Include="Scripts\lib\font-awesome\less\font-awesome.less" />
+    <Content Include="Scripts\lib\font-awesome\less\icons.less" />
+    <Content Include="Scripts\lib\font-awesome\less\larger.less" />
+    <Content Include="Scripts\lib\font-awesome\less\list.less" />
+    <Content Include="Scripts\lib\font-awesome\less\mixins.less" />
+    <Content Include="Scripts\lib\font-awesome\less\path.less" />
+    <Content Include="Scripts\lib\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Scripts\lib\font-awesome\less\stacked.less" />
+    <Content Include="Scripts\lib\font-awesome\less\variables.less" />
+    <Content Include="Scripts\lib\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Scripts\lib\font-awesome\scss\_animated.scss" />
+    <Content Include="Scripts\lib\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Scripts\lib\font-awesome\scss\_core.scss" />
+    <Content Include="Scripts\lib\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Scripts\lib\font-awesome\scss\_icons.scss" />
+    <Content Include="Scripts\lib\font-awesome\scss\_larger.scss" />
+    <Content Include="Scripts\lib\font-awesome\scss\_list.scss" />
+    <Content Include="Scripts\lib\font-awesome\scss\_mixins.scss" />
+    <Content Include="Scripts\lib\font-awesome\scss\_path.scss" />
+    <Content Include="Scripts\lib\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Scripts\lib\font-awesome\scss\_stacked.scss" />
+    <Content Include="Scripts\lib\font-awesome\scss\_variables.scss" />
+    <Content Include="Scripts\lib\pie-chart-master\.gitignore" />
+    <Content Include="Scripts\lib\pie-chart-master\.jshintrc" />
+    <Content Include="Scripts\lib\pie-chart-master\bower.json" />
+    <Content Include="Scripts\lib\pie-chart-master\lib\utils\utils.footer" />
+    <Content Include="Scripts\lib\pie-chart-master\lib\utils\utils.header" />
+    <Content Include="Scripts\lib\pie-chart-master\LICENCE" />
+    <Content Include="Scripts\lib\pie-chart-master\package.json" />
+    <Content Include="Scripts\lib\pie-chart-master\README.md" />
+    <Content Include="Scripts\lib\pie-chart-master\test\spec.footer" />
+    <Content Include="Scripts\lib\pie-chart-master\test\spec.header" />
+    <None Include="Properties\PublishProfiles\webdeploy.pubxml" />
+    <Content Include="Scripts\lib\template-files\img\info.png" />
+    <Content Include="Scripts\lib\template-files\img\logo-car.png" />
+    <Content Include="Scripts\lib\template-files\qimages\.DS_Store" />
+    <Content Include="Scripts\lib\template-files\qimages\._.DS_Store" />
+    <None Include="Properties\PublishProfiles\аква.pubxml" />
+    <None Include="T4MVC\T4MVC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4MVC.cs</LastGenOutput>
+    </None>
+    <None Include="T4MVC\T4MVC.tt.settings.xml" />
+    <Content Include="Scripts\lib\template-files\bootstrap-social.css" />
+    <Content Include="Scripts\lib\template-files\img\header-profile.png" />
+    <Content Include="Scripts\lib\template-files\img\ico-1.png" />
+    <Content Include="Scripts\lib\template-files\img\ico-2.png" />
+    <Content Include="Scripts\lib\template-files\img\ico-3.png" />
+    <Content Include="Scripts\lib\template-files\img\ico-eye.png" />
+    <Content Include="Scripts\lib\template-files\img\ico-flag-active.png" />
+    <Content Include="Scripts\lib\template-files\img\ico-flag.png" />
+    <Content Include="Scripts\lib\template-files\img\ico-next.png" />
+    <Content Include="Scripts\lib\template-files\img\ico-prev.png" />
+    <Content Include="Scripts\lib\template-files\img\img-1.jpg" />
+    <Content Include="Scripts\lib\template-files\img\logo.png" />
+    <Content Include="Scripts\lib\template-files\img\sprite.png" />
+    <Content Include="Scripts\lib\template-files\main.css" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2003.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2006.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2007.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2009.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2023.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2024.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2036.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2055.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2060.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2065.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2081.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2082.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2084.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2085.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2086.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2087.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2088.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2089.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2090.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2091.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2092.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2093.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2094.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2096.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2097.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2098.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2099.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2100.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2101.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2102.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2103.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2105.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2106.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2117a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2117b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2117c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2117d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2118.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2119.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2120.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2121.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2126.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2127.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2129.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2130.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2131.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2132a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2132b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2132c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2132d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2133a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2133b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2133c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2133d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2134.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2138.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2141.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2145.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2154.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2167.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2169.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2176a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2176b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2176c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2176d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2178.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2179.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2180.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2181.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2182.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2188.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2190.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2193.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2205.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2210.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2211.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2212.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2212a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2212b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2212c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2212d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2223.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2226.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2228.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2235.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2237.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2239.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2241.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2243.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2246.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2251.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2252.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2253.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2254.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2264.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2269.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2281.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2282.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2287.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2294a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2294b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2294c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2294d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2295a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2295b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2295c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2295d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2296.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2297a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2297b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2297c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2297d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2298a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2298b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2298c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2298d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2299.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2300.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2301.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2302.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2303.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2304a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2304b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2304c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2304d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2305.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2306.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2307a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2307b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2307c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2307d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2308.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2309.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2310a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2310b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2310c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2310d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2311.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2312.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2313.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2314a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2314b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2314c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2314d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2315.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2316.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2317.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2318.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2319.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2320.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2321a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2321b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2321c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2321d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2322.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2323.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2324a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2324b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2324c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2324d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2325.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2326a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2326b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2326c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2326d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2327.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2328a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2328b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2328c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2328d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2329.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2330.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2331.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2332.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2333.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2334a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2334b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2334c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2334d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2336.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2337.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2338.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2339.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2340.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2341.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2342.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2343.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2344.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2345.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2346.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2347a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2347b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2347c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2347d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2348a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2348b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2348c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2348d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2349.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2350.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2351a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2351b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2351c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2351d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2352.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2353.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2354.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2355.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2356a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2356b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2356c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2356d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2357a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2357b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2357c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2357d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2358.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2359.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2360.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2361.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2362.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2363.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2364.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2365.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2366.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2367.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2368.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2369.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2370.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2371a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2371b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2371c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2371d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2372a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2372b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2372c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2372d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2373.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2374.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2375a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2375b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2375c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2375d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2376.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2377.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2378.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2379.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2381.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2382.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2383.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2384.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2385.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2386.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2387.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2388.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2389a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2389b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2389c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2389d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2390.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2391.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2393.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2394.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2395.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2396.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2397.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2398.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2399.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2400.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2401a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2401b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2401c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2401d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2402.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2403.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2404.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2407.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2408.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2409.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2410a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2410b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2410c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2410d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2416.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2418.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2419.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2420.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2421.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2422.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2426.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2427.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2428.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2429a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2429b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2429c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2429d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2476a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2476b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2476c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2476d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2490.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2513.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2515.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2518.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2519.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2521.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2528.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2529.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2530.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2531.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2544.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2545.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2546.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2549.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2559.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2564.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2567.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2570.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2572.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2578.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2579.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2585.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2591.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2592.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2593.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2596.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2597.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2598.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2599.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2601.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2604.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2611.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2612.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2624.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2627.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2631.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2632.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2633a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2633b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2633c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2633d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2657.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2659.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2665.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2669.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2670.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2671.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2672.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2673.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2674a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2674b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2674c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2674d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2675.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2676.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2677.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2678.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2681.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2701.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2706.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2717.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2718.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2719.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2720.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2724.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2726.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2727.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2729.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2733.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2737.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2738.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2747.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2748.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2756.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2758.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2759.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2760.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2761.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2762.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2763a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2763b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2763c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2763d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2764.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2765.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2766.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2767.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2768a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2768b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2768c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2768d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2769.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2771.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2772.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2789.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2790.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2793.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2794.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2795.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2821.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2823.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2826.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2840.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2841.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2847.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2848.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2849.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2850.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2856.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2857.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2885a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2885b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2885c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2885d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2886.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2887a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2887b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2887c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2887d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2888.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2889.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2890a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2890b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2890c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2890d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2892a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2892b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2892c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2892d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2897a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2897b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2897c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2897d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2898a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2898b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2898c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2898d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2899.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2909.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2911.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2912.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2935a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2935b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2935c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\AB2935d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1004.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1010.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1013.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1021.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1022.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1037.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1038a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1038b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1038c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1038d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1039.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1053.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1054.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1076.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1077.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1078.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1079.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1080.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1081.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1082.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1083.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1084.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1085.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1086.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1087.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1088.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1089.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1090.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1091.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1092.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1093.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1094.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1095.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1096.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1097.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1098.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1099.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1100.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1109.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1130.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1142.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1144.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1173.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1191.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1197.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1201.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1202.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1205.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1207.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1209.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1213.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1214.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1218.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1226.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1227.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1234a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1234b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1234c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1234d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1235.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1236.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1237a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1237b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1237c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1237d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1239.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1241.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1252.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1273.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1330.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1351.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1353.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1356.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1362.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1377.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1397.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1399.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1426.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1427.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1438.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1439.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1447.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1454.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1455.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1495.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1504.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1507.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1521.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1522.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1547.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1558.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1562.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1565.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1571.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1576.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1577.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1581.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1584.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1591a.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1591b.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1591c.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1591d.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1633.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1636.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1657.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1664.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1665.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1666.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1675.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1676.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1684.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1694.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1702.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1718.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1748.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1781.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1782.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1784.gif" />
+    <Content Include="Scripts\lib\template-files\qimages\BB1789.gif" />
+    <Content Include="Scripts\lib\template-files\style-new.css" />
+    <Content Include="Scripts\lib\template-files\style.css" />
+    <Content Include="Static\PrivacyPolicy.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <None Include="T4MVC\T4MVC.tt.hooks.t4" />
+    <Content Include="Views\Shared\VendorResourses.cshtml" />
+    <Content Include="Views\Shared\Urls.cshtml" />
+    <Content Include="Views\Shared\Assets.cshtml" />
+    <Content Include="Views\Home\Main.cshtml" />
+    <Content Include="Views\Home\TopicSummary.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Quiz\Quiz.cshtml" />
+    <Content Include="Views\Quiz\Question.cshtml" />
+    <Content Include="Views\Home\Payment.cshtml" />
+    <Content Include="Views\Home\AccountSettings.cshtml" />
+    <Content Include="Views\Home\ResetPassword.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Account\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\app\accountService.ts" />
+    <TypeScriptCompile Include="Scripts\app\accountSettingsController.ts" />
+    <TypeScriptCompile Include="Scripts\app\app.ts" />
+    <TypeScriptCompile Include="Scripts\app\dashboardController.ts" />
+    <TypeScriptCompile Include="Scripts\app\helpers\httpHelpers.ts" />
+    <TypeScriptCompile Include="Scripts\app\helpers\httpInterceptor.ts" />
+    <TypeScriptCompile Include="Scripts\app\homeController.ts" />
+    <TypeScriptCompile Include="Scripts\app\interfaces.ts" />
+    <TypeScriptCompile Include="Scripts\app\loginController.ts" />
+    <TypeScriptCompile Include="Scripts\app\navLoginController.ts" />
+    <TypeScriptCompile Include="Scripts\app\paymentController.ts" />
+    <TypeScriptCompile Include="Scripts\app\paymentService.ts" />
+    <TypeScriptCompile Include="Scripts\app\questionController.ts" />
+    <TypeScriptCompile Include="Scripts\app\quizController.ts" />
+    <TypeScriptCompile Include="Scripts\app\quizService.ts" />
+    <TypeScriptCompile Include="Scripts\app\registerController.ts" />
+    <TypeScriptCompile Include="Scripts\app\resetPasswordController.ts" />
+    <TypeScriptCompile Include="Scripts\app\topicService.ts" />
+    <TypeScriptCompile Include="Scripts\app\topicsMenuControllers.ts" />
+    <TypeScriptCompile Include="Scripts\app\topicSummaryController.ts" />
+    <TypeScriptCompile Include="Scripts\lib\angularjs\angular-ui-router.d.ts" />
+    <TypeScriptCompile Include="Scripts\lib\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="Scripts\lib\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\lib\kendo\js\kendo.all.d.ts" />
+    <TypeScriptCompile Include="Scripts\lib\linq\linq.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MCQ.Data\MCQ.Data.csproj">
+      <Project>{0E915A5E-6330-4D76-942E-F16629EB83C2}</Project>
+      <Name>MCQ.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MCQ.Domain\MCQ.Domain.csproj">
+      <Project>{DB3F2A2A-3B0B-48B1-94F0-5BB32B4626E8}</Project>
+      <Name>MCQ.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PaymentProcessor\PaymentProcessor.csproj">
+      <Project>{DF1131ED-DBD0-4D59-B9AD-6FDB282FBE21}</Project>
+      <Name>PaymentProcessor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>9345</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:44300/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,57 @@
+﻿@{
+    Layout = null;
+}
+<h1>Register</h1>
+<form ng-controller="registerController" class="form-horizontal">
+
+    <div class="form-group" ng-class="{'has-error': validationErrors['model.FirstName'].errors[0].errorMessage}">
+        <label class="col-sm-3 control-label text-left">
+            First Name
+        </label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" ng-model="registerViewModel.firstName" />
+            <span class="has-error" ng-if="validationErrors['model.FirstName'].errors[0].errorMessage">{{validationErrors['model.FirstName'].errors[0].errorMessage}}</span>
+        </div>
+    </div>
+    <div class="form-group" ng-class="{'has-error': validationErrors['model.LastName'].errors[0].errorMessage}">
+        <label class="col-sm-3 control-label text-left">
+            Last Name
+        </label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" ng-model="registerViewModel.lastName" />
+            <span class="has-error" ng-if="validationErrors['model.LastName'].errors[0].errorMessage">{{validationErrors['model.LastName'].errors[0].errorMessage}}</span>
+        </div>
+    </div>
+    <div class="form-group" ng-class="{'has-error': validationErrors['model.Email'].errors[0].errorMessage}">
+        <label class="col-sm-3 control-label text-left">
+            Email Address
+        </label>
+        <div class="col-sm-9">
+            <input type="email" class="form-control" ng-model="registerViewModel.email" />
+            <span class="has-error" ng-if="validationErrors['model.Email'].errors[0].errorMessage">{{validationErrors['model.Email'].errors[0].errorMessage}}</span>
+        </div>
+    </div>
+    @*<div class="form-group" ng-class="{'has-error': validationErrors['model.UserName'].errors[0].errorMessage}">
+        <label class="col-sm-3 control-label text-left">
+            User Name
+        </label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" ng-model="registerViewModel.userName" />
+            <span class="has-error" ng-if="validationErrors['model.UserName'].errors[0].errorMessage">{{validationErrors['model.UserName'].errors[0].errorMessage}}</span>
+        </div>
+    </div>*@
+    <div class="form-group" ng-class="{'has-error': validationErrors['model.Password'].errors[0].errorMessage}">
+        <label class="col-sm-3 control-label text-left">
+            Password
+        </label>
+        <div class="col-sm-9">
+            <input type="password" class="form-control" ng-model="registerViewModel.password" />
+            <span class="has-error" ng-if="validationErrors['model.Password'].errors[0].errorMessage">{{validationErrors['model.Password'].errors[0].errorMessage}}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-12">
+            <input type="button" value="Register" class="form-control" ng-click="register()" />
+        </div>
+    </div>
+</form>

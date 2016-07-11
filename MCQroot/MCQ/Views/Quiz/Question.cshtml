@@ -1,0 +1,173 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+<div class="ng-scope question-block">
+    <div>
+        @*<div class="question-heading">
+            <h2 class="ng-binding orange" style="min-height: 57px;">
+                Question {{questionViewModel.order}} <a class="flag" href="" ng-click="changeFlagState()">
+                    <img src="~/Scripts/lib/template-files/img/ico-flag.png" alt="image descroption" ng-show="!questionViewModel.isFlagged">
+                    <img src="~/Scripts/lib/template-files/img/ico-flag-active.png" alt="image descroption" ng-show="questionViewModel.isFlagged">
+                </a>
+                    <span ng-show="questionViewModel.isAnswerCorrect !== null && questionViewModel.isRevealed === true">
+                        <span ng-show="!questionViewModel.isAnswerCorrect" class="wrong message">Wrong</span>
+                        <span ng-show="questionViewModel.isAnswerCorrect" class="correct message">Correct</span>
+                    </span>
+            </h2>
+
+
+        </div>*@
+        <div class="text-block">
+            <img src="~/Scripts/lib/template-files/qimages/{{questionViewModel.imageUrl}}" alt="image description" ng-show="questionViewModel.imageUrl">
+            <p class="ng-binding orange">
+
+
+                <b>{{questionViewModel.order}}.</b> 
+                <a class="flag" href="" ng-click="changeFlagState()">
+                    <img src="~/Scripts/lib/template-files/img/ico-flag.png" alt="image descroption" ng-show="!questionViewModel.isFlagged">
+                    <img src="~/Scripts/lib/template-files/img/ico-flag-active.png" alt="image descroption" ng-show="questionViewModel.isFlagged">
+                </a> 
+                <b>{{questionViewModel.name}}</b>
+
+
+
+
+            </p>
+        </div>
+    </div>
+    <ol ng-if="questionViewModel.answers.length" class="answers-list height-limiter orange">
+        <li ng-repeat="answer in questionViewModel.answers" ng-class="getAnswerColor(answer,questionViewModel)" ng-click="selectAnswer(answer)" style="cursor: pointer;">
+            <img src="~/Scripts/lib/template-files/qimages/{{answer.imageUrl}}" alt="image description" ng-show="answer.imageUrl">
+            <b>{{answer.text}}</b>
+
+
+        </li>
+    </ol>
+
+    <div class="slider-box">
+        <div class="col-xs-12 ">
+
+            @*<div class="slider ng-pristine ng-untouched ng-valid ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
+                     ui-slider="slider.options" min="1" max="3" ng-model="sliderSelectedValue">
+                    <span style="left: 100%;" class="slider-handle ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
+                </div>*@
+            <div ui-slider="slider.options" class="slider ng-pristine ng-untouched ng-valid ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
+                 min="1"
+                 max="{{totalQuestionsCountForTab}}"
+                 ng-model="sliderSelectedValue"></div>
+        </div>
+        <div class="col-xs-1 scroll-arrow">
+            <!-- ngIf: nextButtonVisible() -->
+        </div>
+
+    </div>
+    <div class="btn-holder">
+        <input class="input prev" type="button" ng-click="getPrevQuestionForTopic(questionViewModel.order)" ng-if="prevButtonVisible() ">
+        <span ng-show="questionViewModel.isAnswerCorrect !== null && questionViewModel.isRevealed === true">
+            <span ng-show="!questionViewModel.isAnswerCorrect" class="wrong message"><span>Wrong</span></span>
+            <span ng-show="questionViewModel.isAnswerCorrect" class="correct message"><span>Correct</span></span>
+        </span>
+        <button disabled="disabled"  ng-click="answerQuestion()" ng-disabled="!isAnySelected() || isAjax" class="button btn btn-w-m btn-primary" type="button" ng-show="!questionViewModel.isRevealed"><span>Reveal</span></button>
+        @*<input disabled="disabled" value="Reveal" ng-click="answerQuestion()" ng-disabled="!isAnySelected() || isAjax" class="button btn btn-w-m btn-primary" type="button" ng-show="!questionViewModel.isRevealed">*@
+        @*<input type="button" value="Explanation" ng-click="explanation()" class="button btn btn-w-m btn-info" ng-disabled="questionViewModel.isAnswerCorrect == null || !questionViewModel.isRevealed"/>*@
+        <button ng-click="explanation()" class="button btn btn-w-m btn-info" ng-disabled="questionViewModel.isAnswerCorrect == null || !questionViewModel.isRevealed"><span>Explanation</span></button>
+        <input class="input next" type="button" ng-click="getNextQuestionForTopic(questionViewModel.order)" ng-if="nextButtonVisible() ">
+    </div>
+    <div id="fb-root"></div>
+    <!-- Your like button code -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div style="margin-left: 44px;">
+        <h1>Question {{questionViewModel.order}} <a href="" ng-class="questionViewModel.isFlagged ? 'fa fa-flag' : 'fa fa-flag-o'" ng-click="changeFlagState()"></a></h1>
+
+        <p>
+            <img src="http://fr.hdyo.org/assets/ask-question-2-fb180173e13f21ad6ae73ba29b08cd02.jpg" width="50" height="50" />
+            {{questionViewModel.name}}
+        </p>
+
+    </div>
+
+    <ol ng-if="questionViewModel.answers.length" class="answers-list height-limiter">
+        <li ng-repeat="answer in questionViewModel.answers" ng-class="getAnswerColor(answer,questionViewModel)" ng-click="selectAnswer(answer)" style="cursor: pointer; margin: 5px;">
+            <img src="http://fr.hdyo.org/assets/ask-question-2-fb180173e13f21ad6ae73ba29b08cd02.jpg" width="50" height="50" />
+            {{answer.text}}
+        </li>
+    </ol>
+
+    <div style="text-align: center; position: relative;width:79%">
+
+        <input type="button" value="Reveal Answers" ng-click="answerQuestion()" ng-disabled="!isAnySelected() || isAjax" class="btn btn-w-m btn-primary" />
+
+    </div>
+    <div class="row slider-box">
+        <div class="col-xs-1 scroll-arrow">
+            <i class="fa fa-chevron-left" ng-click="getPrevQuestionForTopic(questionViewModel.order)" ng-if="prevButtonVisible() "></i>
+         </div>
+        <div class="col-xs-9 ">
+            <div ui-slider="slider.options"
+                 min="1"
+                 max="{{totalQuestionsCountForTab}}"
+                 ng-model="sliderSelectedValue"></div>
+        </div>
+        <div class="col-xs-1 scroll-arrow">
+            <i class="fa fa-chevron-right" ng-click="getNextQuestionForTopic(questionViewModel.order)" ng-if="nextButtonVisible() "></i>
+         </div>
+
+        <div class="col-xs-1 success-box" ng-show="questionViewModel.isAnswerCorrect !== null && questionViewModel.isRevealed === true">
+            <input type="button" value="Explanation" ng-click="explanation()" />
+        </div>
+    </div>
+
+
+
+
+*@
+
+<script type="text/ng-template" id="Template">
+    <div class="modal-header" ng-show="modalOptions.headerText">
+        <h3>{{modalOptions.headerText}}</h3>
+    </div>
+    <div class="modal-body">
+        <div fb-like></div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn"
+                data-ng-click="modalOptions.close()">
+            {{modalOptions.closeButtonText}}
+        </button>
+
+    </div>
+</script>
+
+<script type="text/ng-template" id="Explanation">
+    <div class="modal-header" ng-show="modalOptions.headerText">
+        <h3>{{modalOptions.headerText}}</h3>
+    </div>
+    <div class="modal-body">
+        {{modalOptions.bodyText}}
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn"
+                data-ng-click="modalOptions.close()">
+            {{modalOptions.closeButtonText}}
+        </button>
+
+    </div>
+</script>

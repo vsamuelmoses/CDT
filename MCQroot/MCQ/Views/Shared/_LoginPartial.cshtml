@@ -1,0 +1,19 @@
+﻿<li  ng-if="loggedUser">
+    <a ui-sref="accountSettings">
+        Welcome, {{loggedUser.firstName}} <i style="font-size: large" class="fa fa-user"></i>
+    </a>
+</li>
+<li ng-if="loggedUser">
+    <a class="logout-lnk" href="#" ng-click="logOff()">Log out <i style="font-size: large" class="fa fa-sign-out"></i></a>
+</li>
+
+
+
+
+
+
+
+
+
+
+

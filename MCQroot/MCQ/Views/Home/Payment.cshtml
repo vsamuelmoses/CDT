@@ -1,0 +1,147 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="main-content orange">
+    <div class="heading-section">
+        <h1>Payment</h1>
+    </div>
+    <div class="dash-items-wrapper main-content-wrapper dash-items-wrapper-new">
+        <div class="row">
+            <div class="col-md-4 col-sm-8 col-lg-4">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class='col-sm-3 control-label text-left'>
+                            $100 / month
+                        </label>
+
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': validationErrors['model.CardNumber'].errors[0].errorMessage}">
+                        <label class='col-sm-3 control-label text-left'>
+                            Card Number
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" ng-model="paymentViewModel.cardNumber" maxlength="16" min="15" />
+                            <span class="has-error" ng-if="validationErrors['model.CardNumber'].errors[0].errorMessage">{{validationErrors['model.CardNumber'].errors[0].errorMessage}}</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-class="{'has-error': validationErrors['model.ExpiryMonth'].errors[0].errorMessage}">
+                        <label class='col-sm-3 control-label text-left'>
+                            Expiry
+                        </label>
+
+                        <div class="col-sm-6">
+                            <div class="form-inline">
+                                <input type="number" ng-model="paymentViewModel.expiryMonth" class="form-control input-small" ng-class="{'has-error': validationErrors['model.ExpiryMonth'].errors[0].errorMessage}" maxlength="2" min="1" max="12" />
+                                /
+                                <input type="number" ng-model="paymentViewModel.expiryYear" class="form-control input-small" ng-class="{'has-error': validationErrors['model.ExpiryYear'].errors[0].errorMessage}" maxlength="2" min="16" />
+                                Format MMYY
+                            </div>
+                        </div>
+                        <span class="has-error" ng-if="validationErrors['model.ExpiryMonth'].errors[0].errorMessage">{{validationErrors['model.ExpiryMonth'].errors[0].errorMessage}}</span>
+                        <span class="has-error" ng-if="validationErrors['model.ExpiryYear'].errors[0].errorMessage">{{validationErrors['model.ExpiryYear'].errors[0].errorMessage}}</span>
+                    </div>
+
+
+                    <div class="form-group" ng-class="{'has-error': validationErrors['model.Cvv'].errors[0].errorMessage}">
+                        <label class='col-sm-3 control-label text-left'>
+                            CVV
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control input-small" ng-model="paymentViewModel.cvv" maxlength="4" />
+                            <span class="has-error" ng-if="validationErrors['model.Cvv'].errors[0].errorMessage">{{validationErrors['model.Cvv'].errors[0].errorMessage}}</span>
+                        </div>
+                    </div>
+                    <hr />
+
+                    @*<div class="form-group" ng-class="{'has-error': validationErrors['model.FirstName'].errors[0].errorMessage}">
+                            <label class='col-sm-3 control-label text-left'>
+                                First Name
+                            </label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" ng-model="paymentViewModel.firstName" />
+                                <span class="has-error" ng-if="validationErrors['model.FirstName'].errors[0].errorMessage">{{validationErrors['model.FirstName'].errors[0].errorMessage}}</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" ng-class="{'has-error': validationErrors['model.LastName'].errors[0].errorMessage}">
+                            <label class='col-sm-3 control-label text-left'>
+                                Last Name
+                            </label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" ng-model="paymentViewModel.lastName" />
+                                <span class="has-error" ng-if="validationErrors['model.LastName'].errors[0].errorMessage">{{validationErrors['model.LastName'].errors[0].errorMessage}}</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" ng-class="{'has-error': validationErrors['model.Address'].errors[0].errorMessage}">
+                            <label class='col-sm-3 control-label text-left'>
+                                Address
+                            </label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" ng-model="paymentViewModel.address" />
+                                <span class="has-error" ng-if="validationErrors['model.Address'].errors[0].errorMessage">{{validationErrors['model.Address'].errors[0].errorMessage}}</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" ng-class="{'has-error': validationErrors['model.PostCode'].errors[0].errorMessage}">
+                            <label class='col-sm-3 control-label text-left'>
+                                Post Code
+                            </label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" ng-model="paymentViewModel.postCode" />
+                                <span class="has-error" ng-if="validationErrors['model.PostCode'].errors[0].errorMessage">{{validationErrors['model.PostCode'].errors[0].errorMessage}}</span>
+                            </div>
+                        </div>*@
+
+                    <div class="form-group" ng-class="{'has-error': validationErrors['model.AgreeWithTerms'].errors[0].errorMessage}">
+
+                        <div class="col-sm-1">
+                            <input type="checkbox" ng-model="paymentViewModel.agreeWithTerms" />
+                        </div>
+                        <div class='col-sm-6'>
+                            <label>
+                                Agree with terms and conditions
+                            </label>
+
+                        </div>
+                        <div class='col-sm-5'>
+                            <span class="has-error" ng-if="validationErrors['model.AgreeWithTerms'].errors[0].errorMessage">{{validationErrors['model.AgreeWithTerms'].errors[0].errorMessage}}</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <input type="button" value="Pay" class="form-control" ng-click="pay()" ng-disabled="paymentViewModel.agreeWithTerms !== true" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script type="text/ng-template" id="Template">
+    <div class="modal-header" ng-show="modalOptions.headerText">
+        <h3>{{modalOptions.headerText}}</h3>
+    </div>
+    <div class="modal-body">
+        <img src="/Scripts/lib/kendo/css/Default/loading.gif" />
+        {{modalOptions.bodyText}}
+    </div>
+    <div class="modal-footer" ng-show="modalOptions.closeButtonText">
+        <button type="button" class="btn"
+                data-ng-click="modalOptions.close()">
+            {{modalOptions.closeButtonText}}
+        </button>
+        <button class="btn btn-primary"
+                data-ng-click="modalOptions.ok();">
+            {{modalOptions.actionButtonText}}
+        </button>
+    </div>
+</script>

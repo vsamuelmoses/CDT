@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+}
+<h1>Login</h1>
+<form ng-controller="loginController" class="form-horizontal">
+    <div class="form-group" ng-class="{'has-error': validationErrors['model.Email'].errors[0].errorMessage}">
+        <label class='col-sm-3 control-label text-left'>
+            Email Address
+        </label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" ng-model="loginViewModel.email" />
+            <span class="has-error" ng-if="validationErrors['model.Email'].errors[0].errorMessage">{{validationErrors['model.Email'].errors[0].errorMessage}}</span>
+        </div>
+    </div>
+    <div class="form-group" ng-class="{'has-error': validationErrors['model.Password'].errors[0].errorMessage}">
+        <label class='col-sm-3 control-label text-left'>
+            Password
+        </label>
+        <div class="col-sm-9">
+            <input type="password" class="form-control" ng-model="loginViewModel.password" ng-class="{'has-error': validationErrors['model.Password'].errors[0].errorMessage}" />
+            <span class="has-error" ng-if="validationErrors['model.Password'].errors[0].errorMessage">{{validationErrors['model.Password'].errors[0].errorMessage}}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-9">
+            <a href="" ng-click="forgotPassword()">Forgot password</a>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-12">
+            <input type="button" value="Sign In" class="form-control" ng-click="login()" />
+        </div>
+    </div>
+    <p class="text-center">
+        or
+    </p>
+    <div class="form-group">
+        <div class="col-xs-12">
+            <a class="btn btn-block btn-social btn-facebook" ng-click="loginWithFacebook()">
+                <span class="fa fa-facebook"></span> Sign in with Facebook
+            </a>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-9">
+            <a href="../../Static/PrivacyPolicy.html">Privacy Policy</a>
+        </div>
+    </div>
+</form>
+<script type="text/ng-template" id="Template">
+    <div class="modal-header" ng-show="modalOptions.headerText">
+        <h3>{{modalOptions.headerText}}</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <label class='col-sm-2 control-label text-left'>
+                Email
+            </label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" ng-model="modalOptions.email" ng-class="{'has-error': validationErrors['model.Email'].errors[0].errorMessage}" />
+                <span class="has-error" ng-if="validationErrors['model.Email'].errors[0].errorMessage">{{validationErrors['model.Email'].errors[0].errorMessage}}</span>
+            </div>
+            
+        </div>
+       
+    </div>
+    <div class="modal-footer" >
+        <button type="button" class="btn"
+                data-ng-click="modalOptions.close()">
+            {{modalOptions.closeButtonText}}
+        </button>
+        <button class="btn btn-primary"
+                data-ng-click="modalOptions.ok();">
+            {{modalOptions.actionButtonText}}
+        </button>
+    </div>
+</script>

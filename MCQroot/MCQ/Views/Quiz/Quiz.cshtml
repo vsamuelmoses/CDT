@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="main-content">
+
+    <div class="clheader">
+        <div class="heading-section pull-left">
+            <h1>
+                <b>{{selectedTopic.name}}</b>
+            </h1>
+        </div>
+
+        <ul class="tabs pull-left">
+            <li ng-class="{'active' : selectedState == 0}">
+                <a ng-class="{'active' : selectedState == 0}" data-toggle="tab" href="" ng-click="all()" aria-expanded="true"> All ({{selectedTopic.questionCount}})</a>
+            </li>
+            <li ng-class="{'active' : selectedState == 1}">
+                <a ng-class="{'active' : selectedState == 1}" data-toggle="tab" href="" ng-click="unread()" aria-expanded="false">Unread ({{unReadedQuestions.length}})</a>
+            </li>
+            <li ng-class="{'active' : selectedState == 2}">
+                <a ng-class="{'active' : selectedState == 2}" data-toggle="tab" href="" ng-click="flagged()" aria-expanded="false">Flagged ({{flaggedQuestionsIds.length}})</a>
+            </li>
+        </ul>
+    </div>
+    
+
+
+
+    @*<ul class="nav nav-tabs">
+            <li ng-class="{'active' : selectedState == 0}"><a data-toggle="tab" href="" ng-click="all()" aria-expanded="true"> All({{selectedTopic.questionCount}})</a></li>
+            <li ng-class="{'active' : selectedState == 1}"><a data-toggle="tab" href="" ng-click="unread()" aria-expanded="false">UnRead({{unReadedQuestions.length}})</a></li>
+            <li ng-class="{'active' : selectedState == 2}"><a data-toggle="tab" href="" ng-click="flagged()" aria-expanded="false">Flagged({{flaggedQuestionsIds.length}})</a></li>
+        </ul>*@
+
+    <div ng-controller="questionController">
+        @Html.Partial("Question")
+    </div>
+</div>
